@@ -1,12 +1,8 @@
 function sum(a, b) {
-  try {
-    if (isNaN(a) || isNaN(b)) {
-      throw TypeError()
-    }
-    return a + b
-  } catch (e) {
-    return e
+  if (typeof a !== 'number' || typeof b !== 'number') {
+    throw new TypeError('')
   }
+  return a + b
 }
 
 module.exports = sum;
